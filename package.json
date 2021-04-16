@@ -1,0 +1,27 @@
+{
+  "name": "swagger-mock-header",
+  "version": "1.0.0",
+  "description": "Express middleware for generating mocking responses based on swagger.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcfielding1/swagger-mock-header.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcfielding1/swagger-mock-header/issues"
+  },
+  "homepage": "https://github.com/marcfielding1/swagger-mock-header#readme",
+  "dependencies": {
+    "@apidevtools/swagger-parser": "^10.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
