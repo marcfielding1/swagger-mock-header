@@ -14,7 +14,7 @@ const mockMiddleWare = (req, res, next) => {
   }
 
   if (req.headers['x-mock-header']) {
-    console.log('api def', swagger);
+    console.log('api def', swagger); // TODO: debug statement remove.
 
     const { method } = req; // GET, POST etc
     const requestUrl = req.baseUrl + req.path; // Path without URL params
@@ -32,7 +32,7 @@ const mockMiddleWare = (req, res, next) => {
 
     // now we know it exists we need to pull out the content. Swagger parser resolves $ref's on it's own
 
-    const response = methodSpec[method]?.responses[requestedResponse].content; // TODO: rename this variable.
+    const response = methodSpec[method]?.responses[requestedResponse]?.content; // TODO: rename this variable.
 
     // nothing defined, nothing retuned.
     if (!response) {
