@@ -7,14 +7,12 @@ export default class MockMiddleware {
     this.initialized = undefined;
     this.logger = undefined;
     this.config = undefined;
-    this.initialize(conf);
+    return this.initialize(conf);
   }
 
   async initialize(conf) {
     try {
       this.config = conf;
-
-      this.swagger = await SwaggerParser.validate(fs.readFileSync(this.config.swaggerFilePath, 'utf8'));
 
       // some express apps have their own logging functions so..... //TODO: Add error handling
       if (this.config.log) {
@@ -26,9 +24,14 @@ export default class MockMiddleware {
         this.logger = console;
       }
 
+      if (!this.config.swaggerFilePath) {
+        throw new Error('Please pass in xswaggerFilePath in config to enable this middleware.');
+      }
+
+      this.swagger = await SwaggerParser.validate(fs.readFileSync(this.config.swaggerFilePath, 'utf8'));
       this.initialized = true;
     } catch (err) {
-      console.log(err);
+      throw new Error(err);
     }
   }
 
