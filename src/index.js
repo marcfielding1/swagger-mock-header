@@ -44,7 +44,7 @@ export default class MockMiddleware {
 
       const { method } = req; // GET, POST etc
       const requestUrl = req.baseUrl + req.path; // Path without URL params
-      const apiSpec = this.swagger[requestUrl]; // This gets the overarching object for that path.
+      const apiSpec = this.swagger.paths[requestUrl]; // This gets the overarching object for that path.
       const requestedResponse = req.headers['x-mock-header']; // this tells us if we're returning a mocked response. IE x-mock-header: 200
       const methodSpec = apiSpec[method.toLowerCase()]; // the actual object relating to the path AND method.
 
