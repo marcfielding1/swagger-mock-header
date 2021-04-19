@@ -14,7 +14,7 @@ openapi: 3.0.3
 info:
   title: Appeals Service API Documentation
   description:
-    API to <ul><li>create, retrieve and modify planning appeals and </li><li>retrieve local planning authorities.</li></ul>
+    Description
   version: 1.0.3
   license:
     name: MIT

@@ -63,7 +63,7 @@ export default class MockMiddleware {
 
       const response = methodSpec[method]?.responses[requestedResponse].content; // TODO: rename this variable.
 
-      // nothing defined, nothing retuned.
+      // nothing defined, nothing returned.
       if (!response) {
         this.logger.err(`No mock response available for requested code. ${requestedResponse}`);
         return next();
